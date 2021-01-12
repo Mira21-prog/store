@@ -1,0 +1,8 @@
+<div class = "container">
+	<div class = "row">
+	  <%= render "products/content_card", object: @products %>
+  </div>
+<div>
+
+  <%= will_paginate @products, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+

@@ -1,0 +1,21 @@
+<nav>
+ <div class = "row">
+		<img class="navbar-brand" src = "https://avic.ua/assets/frontend/images/logo-new-year.png"></img>
+	<div class = "col-md-3 catalog">
+		<ul id="menu">
+	    <% Category.where(parent_id: nil).each do |category| %>
+	      <li><%= button_to category.name, root_path, params: { category: category.id }, method: :get %></li>
+	    <% end %>
+    </ul>
+	</div>
+	<div class = "col-md-6 input-catalog">
+		<div class="input-group">  
+      <%= search_field_tag :search, params[:search], placeholder: "Search...", class: "form-control input-lg  " %>  
+      <div class="input-group-btn">  
+        <%= button_tag "SEARCH", :class => 'btn btn-info input-lg',:name => nil%>  
+      </div>
+    </div>
+	</div>
+ </div>
+	<hr>
+</nav>
