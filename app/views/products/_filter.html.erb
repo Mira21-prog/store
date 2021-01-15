@@ -1,0 +1,10 @@
+<%= form_tag(search_products_path, method: :get) do |form| %>
+  <%= select_tag :status, options_for_select(["Sort by",["From expesive to cheap", "downprice"], ["From cheap to expesive","upprice"],["Ascendens", "ascendens"], ["Descendens","descendent"]]), class: 'form-control selector'%>
+<% end %>
+<script>
+ $(document).ready(function(){
+	$('.selector').change(function(){
+    this.form.submit()
+  });
+});
+</script>

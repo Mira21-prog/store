@@ -1,0 +1,28 @@
+<div class = "container">
+	<div class = "row">
+		
+			<p class = "title"><%= @product.name %></p>
+	
+		<div class = "col-md-6">
+			<div class = "card">
+				<%= image_tag(@product.image, width: "75%", height: "75%") %>
+			</div>
+		</div>
+		<div class = "col-md-6">
+			<div class = "card">
+				<div class = "card-body">
+				  <p class = "text-secondary">Product code: 56 240221</p>
+					<p class = "text-success">In stock</p>
+					<div class = "row ">
+					   <h2 class = "price-card"><p class = "button-span"><%= @product.price %><i class = "fas fa-hryvnia"></p></i></h2>
+					     <button type="button" class="btn btn-success button-card">Buy</button>
+					</div>
+				  <hr>
+				  <p>All characteristics</p>
+				  <p><%= @product.characteristic%></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>>

@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 gem 'will_paginate-bootstrap4'
+gem 'jquery-ui-rails'
 
 
 group :development do

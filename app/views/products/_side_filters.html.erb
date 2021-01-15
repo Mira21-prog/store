@@ -1,0 +1,41 @@
+<div class = "">
+	<hr>
+	<p class = "title-filter">Price</p>
+	<%= form_tag(search_products_path, method: :get, class: "form-inline") do |form| %>
+	  <div class="form-group col-md-4 from">
+      <%= text_field_tag :price_from, nil, class: "input-from", type: "number", min: 0, value: Product.pluck(:price).min %>
+    </div>
+    <div class="form-group col-md-4 to">
+      <%= text_field_tag :price_to, nil, class: "input-to",type: "number", min: 0, value: Product.pluck(:price).max %>
+    </div>
+    
+    <div class="form-group col-md-4">
+      <button type="submit" class="btn btn-primary">OK</button>
+    </div>
+  <% end %>
+  <div id="slider-range"></div>
+</div>
+
+  <script>
+  $(document).ready(function(){
+
+    $( "#slider-range" ).slider({
+      range: true,
+      min: <%= Product.pluck(:price).min%>,
+      max: <%= Product.pluck(:price).max%>,
+      create: attachSlider,
+      slide: attachSlider,
+      stop: attachSlider,
+      values: [<%= Product.pluck(:price).min%>, <%= Product.pluck(:price).max%>]
+     })
+
+      function attachSlider() {
+        $( ".input-from" ).val($('#slider-range').slider("values", 0));
+        $( ".input-to" ).val($('#slider-range').slider("values", 1));
+      }
+      $('input').change(function(e) {
+          var setIndex = (this.class == "input-to") ? 1 : 0;
+          $('#slider-range').slider("values", setIndex, $(this).val())
+      })
+  });
+  </script>

@@ -1,21 +1,61 @@
-<nav>
- <div class = "row">
-		<img class="navbar-brand" src = "https://avic.ua/assets/frontend/images/logo-new-year.png"></img>
-	<div class = "col-md-3 catalog">
-		<ul id="menu">
-	    <% Category.where(parent_id: nil).each do |category| %>
-	      <li><%= button_to category.name, root_path, params: { category: category.id }, method: :get %></li>
-	    <% end %>
-    </ul>
-	</div>
-	<div class = "col-md-6 input-catalog">
-		<div class="input-group">  
-      <%= search_field_tag :search, params[:search], placeholder: "Search...", class: "form-control input-lg  " %>  
-      <div class="input-group-btn">  
-        <%= button_tag "SEARCH", :class => 'btn btn-info input-lg',:name => nil%>  
+<nav class='header-nav'>
+    <div class = "row">
+    	<div class = "col-md-2">
+    		<div class="navbar-brand text-uppercase font-weight-bold">
+    		<a href = "/">Apple Store</a></div>    
+		  </div>
+
+	  	<div class = "col-md-8 input-catalog">
+		    <%= render "layouts/search" %>
+		  </div>
+
+		  <div class = "col-md-2 user-icon">
+		  	<div class="dropdown">
+		      <i class='far fa-user-circle user-icon' id = "user">
+		      </i>
+		        <ul class="dropdown-menu" id = "user-drop-menu">
+                <li><a href="#">Log in</a></li>
+                <hr>
+                <li><a href="#">Sign up</a></li>
+            </ul>
+		      <i class='fa fa-shopping-cart cart-icon'></i>
+		  </div>
+		  </div>
+	  </div>
+
+	  <div class = "row">
+	    <div class = "col-md-12 catalog">
+    	  <%= render "layouts/nav" %>  
       </div>
     </div>
 	</div>
  </div>
-	<hr>
+ <hr>
 </nav>
+
+<script>
+
+$(document).ready(function(){
+	$( "#tags" ).autocomplete({ source: function(request, response) {
+		  $.getJSON('/search.json', { filter : $('#tags').val() }, function(data){
+		  	var suggestions = [];
+		  	debugger
+		  	$.each(data, function(key, val) {
+		  		suggestions.push({id: val.id, label: val.name, value: val.name });
+		  		});
+		  	response(suggestions);
+        });
+    }     
+  });
+});
+
+
+$(document).ready(function(){
+$( "#user" ).click(function() {
+  $( "#user-drop-menu" ).toggle();
+});
+});
+
+
+
+</script>
