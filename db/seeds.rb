@@ -48,3 +48,4 @@ products_data.each do |item|
   subcategory.products.create(name: item[:product], price: item[:price], image: item[:image],
                               characteristic: item[:characteristic])
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
