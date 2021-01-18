@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/lynndylanhurley/devise_token_auth.git
+  revision: c92258038c05fcc8f6a0374ccce2e63b9f8d5312
+  specs:
+    devise_token_auth (1.1.4)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 6.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -291,6 +300,7 @@ DEPENDENCIES
   bootstrap
   capybara (>= 3.26)
   devise
+  devise_token_auth!
   dotenv-rails (~> 2.1, >= 2.1.1)
   jbuilder (~> 2.7)
   jquery-ui-rails
