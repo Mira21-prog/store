@@ -171,3 +171,13 @@ body {
 #user-drop-menu li {
 	margin-top: 3px;
 }
+.card-img-top{
+  height: 200px;
+  max-width: 226px;
+}
+#deviseErrorsWrapper{
+display: none;
+}
+#deviseErrors{
+	display: none;
+}

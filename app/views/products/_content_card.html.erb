@@ -1,7 +1,7 @@
 <% @products.each do |product| %> 
 	  <div class = "col-sm-4 product">
 	  	<div class = "card card-focus">
-		    <%= image_tag(product.image, width: "75%", height: "210", alt: "Image", class: "card-img-top") %><br>
+		    <%= image_tag(product.image, width: "226", alt: "Image", class: "card-img-top mx-auto d-block") %><br>
 		    <div class="card-body text-secondary">
           <%= link_to truncate(product.name, length: 70, separator: '.'), product_path(product)%>
           <br>

@@ -1,0 +1,8 @@
+ <% if @user.errors.any? %>
+ 	$(document).find('#deviseErrorsWrapper').html("<%= j render 'devise/shared/error_messages', resource: @user %>")
+ 	           .show();
+ 	$('#deviseErrorsWrapper h2').replaceWith('<h4></h4>')
+ 	$('#deviseErrorsWrapper h4').text('<%= pluralize( @user.errors.count , 'error message' ) %>:')
+ <% else %>
+ 	window.location.reload();
+ <% end %>

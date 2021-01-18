@@ -14,9 +14,15 @@
 		      <i class='far fa-user-circle user-icon' id = "user">
 		      </i>
 		        <ul class="dropdown-menu" id = "user-drop-menu">
-                <li><a href="#">Log in</a></li>
+		        	<% if user_signed_in? %>
+		        	  <li><a href="">Edit profile</a></li>
                 <hr>
-                <li><a href="#">Sign up</a></li>
+                <li><%= link_to("Log out", destroy_user_session_path, method: :delete)%></li>
+		        	<% else %>
+                <li><a href="/users/sign_in" data-toggle="modal" data-target="#log-in-modal">Log in</a></li>
+                <hr>
+                <li><a href="/users/sign_up" data-toggle="modal" data-target="#sign-up-modal">Sign up</a></li>
+              <% end %>
             </ul>
 		      <i class='fa fa-shopping-cart cart-icon'></i>
 		  </div>
@@ -32,6 +38,24 @@
  </div>
  <hr>
 </nav>
+
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="<%= resource.errors.any? ? 'modal' : 'modal hide'%>">
+	<div class="modal-dialog" role="document">
+    <div class="modal-content">
+	     <%= render template: "devise/registrations/new" %>
+	  </div>
+	</div>
+</div>
+
+<div class="modal fade" id="log-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+    <div class="modal-content">
+	     <%= render template: "devise/sessions/new" %>
+	  </div>
+	</div>
+</div>
+
+
 
 <script>
 
