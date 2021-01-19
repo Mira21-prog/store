@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 gem 'jquery-ui-rails'
 gem 'will_paginate-bootstrap4'
+gem "paperclip", "~> 6.0.0"
 
 group :development do
   gem 'pg'

@@ -1,6 +1,11 @@
 class Product < ApplicationRecord
 	belongs_to :category
 
+	validates :name, :price, :characteristic, :image, presence: true
+	validates :name, length: { minimum: 10 }
+	validates :characteristic, length: { maximum: 500 }
+	validates :price, numericality: { only_integer: true }
+
 	scope :searcher,  -> (params) {
 		search_scope = Product.all
 		search_scope = search_scope.sub_category(params[:q]) if params[:q].present?
