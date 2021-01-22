@@ -27,4 +27,57 @@
   $(document).on('submit', '#form-sign-up', function (data) {
     debugger
   })
+
+  $(document).on('click', '.change-quantity', function (e) {
+    var self = this;
+    var url = $(self).data('url');
+
+    $.ajax({
+      url: url,
+      method: 'PUT',
+      contentType: "application/json",
+      dataType: 'json',
+
+      success: function (data) {
+        $(self).parents('.form-inline').find('input').val(data['quantity_count']);
+        $('.total-price').text(data['price']);        
+
+      }
+    })
+  })
+
+  $(document).on('click', '.delete-cart-item', function (e) {
+    var self = this;
+    var url = $(self).data('url');
+    var count_row = $('.modal-body').find('.row').length;
+
+    $.ajax({
+      url: url,
+      method: 'DELETE',
+      contentType: "application/json",
+      dataType: 'json',
+
+      success: function (data) {
+        $(self).parents('.row').remove('#item-' + data['item']);
+        var count_row = $('.modal-body').find('.row').length;
+        $('.num-category').text(count_row);
+        if (count_row == 0){
+          $('.empty-cart').show();
+        } else{
+          $('.empty-cart').hide();
+        }
+      }
+    })
+  })
+  $(document).on('click', '.cart-icon', function (e) {
+     var count_row = $('.modal-body').find('.row').length;
+     if (count_row == 0){
+          $('.empty-cart').show();
+        } else{
+          $('.empty-cart').hide();
+      }
+  })
+
+
+ 
 </script>

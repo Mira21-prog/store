@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
+gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -46,6 +47,7 @@ group :development do
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
   gem 'pry'
   gem 'spring'
+  gem 'annotate'
 end
 
 group :production do

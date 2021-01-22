@@ -1,0 +1,10 @@
+<%= semantic_form_for [:admin, @product], builder: ActiveAdmin::FormBuilder do |f| %>
+  <%= f.inputs do %>      
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.input :characteristic%>
+    <%= f.input :name %>
+    <%= f.input :attachment, as: :file %>
+    <%= f.actions %>
+<% end %>
+<% end %>

@@ -1,14 +1,18 @@
+
 <% @products.each do |product| %> 
 	  <div class = "col-sm-4 product">
 	  	<div class = "card card-focus">
-		    <%= image_tag(product.image, width: "226", alt: "Image", class: "card-img-top mx-auto d-block") %><br>
+	  		<% if product.attachment.attached? %>
+		    	<%= image_tag(product.attachment, width: "226", alt: "Image", class: "card-img-top mx-auto d-block") %><br>
+		    <% end %>
 		    <div class="card-body text-secondary">
           <%= link_to truncate(product.name, length: 70, separator: '.'), product_path(product)%>
           <br>
           <br>
           <%= product.price %> <i class = "fas fa-hryvnia"></i>
 
-          <a href="#" class="card-icon-select"><i class = "fa fa-shopping-cart cart-icon"></i>Buy</a>
+          <!-- <a href="#" class="card-icon-select"><i class = "fa fa-shopping-cart cart-icon"></i>Buy</a> -->
+          <%= button_to "Add to cart", product_cart_items_path(product), method: :post, class: "btn btn-success button-card" %>
           <div class = "characteristic">
           	<hr>
           	<%= product.characteristic %><br>

@@ -24,7 +24,7 @@
                 <li><a href="/users/sign_up" data-toggle="modal" data-target="#sign-up-modal">Sign up</a></li>
               <% end %>
             </ul>
-		      <i class='fa fa-shopping-cart cart-icon'></i>
+          <%= link_to "", cart_url, class: 'fa fa-shopping-cart cart-icon', data: {toggle: "modal", target: "#cart-modal-info"} %><span class="num-category"><%= cart&.cart_items&.count || 0 %></span>
 		  </div>
 		  </div>
 	  </div>
@@ -47,10 +47,18 @@
 	</div>
 </div>
 
-<div class="modal fade" id="log-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id ="log-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
     <div class="modal-content">
 	     <%= render template: "devise/sessions/new" %>
+	  </div>
+	</div>
+</div> 
+
+<div class="modal fade" id ="cart-modal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+	     <%= render template: "carts/show", locals: { cart_items: cart&.cart_items || 0 } %>
 	  </div>
 	</div>
 </div>

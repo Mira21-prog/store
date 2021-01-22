@@ -181,3 +181,53 @@ display: none;
 #deviseErrors{
 	display: none;
 }
+form button  {
+}
+.num-category{
+	font-size: 17px;
+	color:red;
+  font-weight: 900;
+  position: absolute;
+  border-radius: 60%;
+  height: 14px;
+  width: 8px;
+  text-align: left;
+  border: 1px solid white;
+  background: mistyrose;
+  border-radius: 50%;
+  text-align: center; 
+  width: 27px;
+  height: 27px;
+  left:90px;
+
+}
+#quantity_cart_input{
+	min-width: 0;
+  width: 50px !important;
+}
+.card-img-modal{
+  height: 100px;
+  max-width: 126px;
+}
+.empty-cart{
+	display:none;
+}
+.delete-cart-item{
+	margin-left: 275px;
+}
+.count-price {
+	border: 1px solid #55a846;
+	border-radius: .25rem;
+	padding: 20px;
+	background-color: #e8f4ec;
+}
+.total-price-card{
+	margin-left: 100px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+.confirm-cart{
+	min-height:100px !important;
+}

@@ -10,7 +10,7 @@ products_data.each do |item|
   category = Category.where(name: item[:category]).first_or_create!
 
   subcategory = category.subcategories.where(parent_id: category.id, name: item[:subcategory]).first_or_create!
-  subcategory.products.create(name: item[:product], price: item[:price], image: item[:image],
+  subcategory.products.create(name: item[:product], price: item[:price],
                               characteristic: item[:characteristic])
 end
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
