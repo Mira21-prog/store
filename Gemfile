@@ -22,8 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'cloudinary', '~> 1.18.1'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
-gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -32,8 +32,8 @@ gem 'cloudinary'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 gem 'jquery-ui-rails'
+gem 'paperclip', '~> 6.0.0'
 gem 'will_paginate-bootstrap4'
-gem "paperclip", "~> 6.0.0"
 
 group :development do
   gem 'pg'
@@ -44,10 +44,10 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'annotate'
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
   gem 'pry'
   gem 'spring'
-  gem 'annotate'
 end
 
 group :production do

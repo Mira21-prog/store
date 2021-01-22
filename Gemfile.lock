@@ -333,7 +333,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap
   capybara (>= 3.26)
-  cloudinary
+  cloudinary (~> 1.18.1)
   devise
   devise_token_auth!
   dotenv-rails (~> 2.1, >= 2.1.1)

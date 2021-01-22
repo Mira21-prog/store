@@ -4,15 +4,15 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :name, :category_id, :price, :characteristic, :attachment
+  permit_params :name, :category_id, :price, :characteristic, :attachment
 
-   form partial: 'form'
+  form partial: 'form'
 
-     show do
+  show do
     attributes_table do
       row :name
       row :category_id
-      row :price 
+      row :price
       row :characteristic
       row :attachment do |ad|
         image_tag url_for(ad.attachment)

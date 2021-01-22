@@ -3,28 +3,27 @@ class Cart < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_one :order, dependent: :destroy
 
-  enum status: [:in_progress, :completed]
+  enum status: %i[in_progress completed]
 
   def add_product(product)
-  	current_item = cart_items.find_by(product_id: product.id)
+    current_item = cart_items.find_by(product_id: product.id)
 
-  	if current_item 
-  		current_item.increment(:quantity)
-  	else 
-  		current_item = cart_items.build(product_id: product.id)
-  	end 
-  	current_item 
-  end 
-
-  def remove_quantity
-  	current_item = cart_items.find_by(product_id: product.id)
-  	current_item.decrement(:quantity)
-  end 
-
-  def total_price
-    cart_items.to_a.sum { |item| item.total_price}
+    if current_item
+      current_item.increment(:quantity)
+    else
+      current_item = cart_items.build(product_id: product.id)
+    end
+    current_item
   end
 
+  def remove_quantity
+    current_item = cart_items.find_by(product_id: product.id)
+    current_item.decrement(:quantity)
+  end
+
+  def total_price
+    cart_items.to_a.sum { |item| item.total_price }
+  end
 end
 
 # == Schema Information
