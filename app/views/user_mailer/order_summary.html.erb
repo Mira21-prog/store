@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <%= stylesheet_link_tag "order_summary", media: "all" %>
+  </head>
+  <body>
+    <div class = "container">
+       <h1><%= @user.first_name %> <%= @user.first_name %>, welcome to Apple Store</h1>
+       <p>
+         You have successfully maked an order! 
+       </p>
+       <br>
+       <p>You ordered: </p>
+    </div>
+    <div class = 'container'>
+      <% @order.cart.cart_items.each do |item| %>
+        <div class="row" >
+          <div class="col-sm-2">
+            <% if item.product.attachment.attached? %>
+             <%= image_tag(item.product.attachment.url, width: "96", alt: "Image") %>
+            <% end %>
+          </div>
+          <div class="col-sm-10">
+            <p><%= item.product.name %></p>
+            <p>Quantity: <%= item.quantity%></p>
+            <p>Price: <%= item.product.price %> &#8372;</p>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+      <div class="row">
+        <p>Total price: <%= @order.cart.total_price%> &#8372;</p>
+      </div>
+      <div class="row">
+        Address: <%= @order.address %>
+      </div>
+      <div class="row">
+        City: <%= @order.city %>
+      </div>
+    <div>
+
+  </body>
+</html>

@@ -97,6 +97,11 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap-email (0.3.4)
+      actionmailer (>= 3)
+      nokogiri (~> 1.6)
+      premailer-rails (~> 1.9)
+      rails (>= 3)
     builder (3.2.4)
     capybara (3.34.0)
       addressable
@@ -114,6 +119,8 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    css_parser (1.8.0)
+      addressable
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -137,6 +144,7 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
+    htmlentities (4.3.4)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -167,6 +175,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -201,6 +213,13 @@ GEM
       terrapin (~> 0.6.0)
     pg (1.2.3)
     popper_js (1.16.0)
+    premailer (1.14.2)
+      addressable
+      css_parser (>= 1.6.0)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.11.1)
+      actionmailer (>= 3)
+      premailer (~> 1.7, >= 1.7.9)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -333,13 +352,15 @@ DEPENDENCIES
   annotate
   bootsnap (>= 1.4.4)
   bootstrap
+  bootstrap-email
   capybara (>= 3.26)
   cloudinary (~> 1.18.1)
   devise
   devise_token_auth!
-  dotenv-rails (~> 2.1, >= 2.1.1)
+  dotenv-rails
   jbuilder (~> 2.7)
   jquery-ui-rails
+  letter_opener
   listen (~> 3.3)
   mini_magick
   paperclip (~> 6.0.0)

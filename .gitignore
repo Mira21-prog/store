@@ -40,3 +40,4 @@ yarn-debug.log*
 .yarn-integrity
 .env
 .ruby-gemset
+app_env_vars.*

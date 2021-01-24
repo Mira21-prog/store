@@ -7,9 +7,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @cart.create_order(permit_params)
+    @order = @cart.create_order(permit_params)
     @cart.completed!
     cookies.delete(:cart_id)
+    UserMailer.with(user: @user, order: @order).order_summary.deliver_later
     redirect_to root_path
   end
 
@@ -20,7 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def get_current_user
-    current_user
+    @user = current_user
   end
 
   def permit_params

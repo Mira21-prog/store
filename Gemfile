@@ -34,6 +34,8 @@ gem 'bootstrap'
 gem 'jquery-ui-rails'
 gem 'paperclip', '~> 6.0.0'
 gem 'will_paginate-bootstrap4'
+ gem 'dotenv-rails', groups: [:development, :production]
+
 
 group :development do
   gem 'pg'
@@ -45,9 +47,10 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'annotate'
-  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
   gem 'pry'
   gem 'spring'
+  gem 'bootstrap-email'
+  gem "letter_opener"
 end
 
 group :production do
