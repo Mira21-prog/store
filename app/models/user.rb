@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true
   has_many :carts, dependent: :destroy
-  has_many :order, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  has_one :comment
 end
 
 # == Schema Information

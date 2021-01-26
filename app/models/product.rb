@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category
   has_many :cart_items, dependent: :destroy
+  has_many :comments
 
   validates :name, :price, :characteristic, presence: true
   validates :name, length: { minimum: 10 }
@@ -36,9 +37,9 @@ class Product < ApplicationRecord
 
   has_one_attached :attachment
 
-  def to_param
-    "#{id}-#{name.parameterize}"
-  end
+  # def to_param
+  #   "#{id}-#{name.parameterize}"
+  # end
 end
 
 # == Schema Information

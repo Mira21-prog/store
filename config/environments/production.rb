@@ -70,8 +70,6 @@ Rails.application.configure do
    config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    user_name:            'matsakovamira156@gmail.com',
-    password:             'nozomo89123',
     authentication:       'plain'}
 
   # Ignore bad email addresses and do not raise email delivery errors.

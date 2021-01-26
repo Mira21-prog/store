@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :get_category, only: :index
+  before_action :get_user, only: :show
 
   def index
     @products = Product.searcher(params)
@@ -14,10 +15,16 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id].split('-').first)
+    @product = Product.find(params[:id])
+    @comment = Comment.all
+
   end
 
   private
+
+  def get_user
+  	current_user if user_signed_in?
+  end
 
   def get_category
     @category = Category.find_by(id: params[:q])

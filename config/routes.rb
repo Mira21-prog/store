@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/products/:id', to: 'products#show', as: 'product'
   resources :products do
     resources :cart_items, only: %i[create update destroy]
+    resources :comments
   end
   resources :carts, only: %i[show update]
   resources :orders, only: %i[create new]

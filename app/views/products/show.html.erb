@@ -27,4 +27,16 @@
 		</div>
 
 	</div>
-</div>>
+</div>
+<% if user_signed_in? %>
+<div class="container">
+	<h2>Leave comment</h2>
+	<br>
+	<div class="row">
+    <%= render 'comments/new', locals: { product: @product }%>
+  </div>
+</div>
+<% else %>
+  <p>Info! Only logged user can leave comment.</p>
+<% end %>
+<br>
