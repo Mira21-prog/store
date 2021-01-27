@@ -10,8 +10,7 @@ class User < ApplicationRecord
 
 
   def self.from_omniauth(authorize_params)
-  	user = User.find_by(uid: authorize_params.fetch('
-  		'))
+  	user = User.find_by(uid: authorize_params.fetch('uid'))
 
     if user.present?
       user
