@@ -9,21 +9,21 @@ class User < ApplicationRecord
   has_one :comment
 
 
-  def self.from_omniauth(auth)
-    user = User.find_by(email: auth.info.email)
-    if user
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.save
+  def self.from_omniauth(authorize_params)
+  	user = User.find_by(uid: authorize_params.fetch('uid'))
+
+    if user.present?
+      user
     else
-      user = User.where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.email = auth.info.email
-        user.password = Devise.friendly_token[0,20]
-        user.first_name = auth.info.name.split(' ').first
-        user.last_name = auth.info.name.split(' ').second
-      end
+      user = create!(
+        uid: authorize_params.fetch('uid'),
+        email: authorize_params.fetch('info').fetch('email'),
+        nickname: authorize_params.fetch('info').fetch('nickname'),
+        first_name: authorize_params.fetch('info').fetch('name'),
+        password: Devise.friendly_token[0,20]
+      )
+      user
     end
-     user
   end
 end
 
