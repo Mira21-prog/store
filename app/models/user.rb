@@ -3,14 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[github]
-  validates :first_name, presence: true
+  # validates :first_name, presence: true
   has_many :carts, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_one :comment
 
 
   def self.from_omniauth(authorize_params)
-  	user = User.find_by(uid: authorize_params.fetch('uid'))
+  	user = User.find_by(uid: authorize_params.fetch('
+  		'))
 
     if user.present?
       user
