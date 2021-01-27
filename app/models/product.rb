@@ -37,6 +37,10 @@ class Product < ApplicationRecord
 
   has_one_attached :attachment
 
+  def star_average
+    self.comments.average("rating").to_i
+  end 
+
   # def to_param
   #   "#{id}-#{name.parameterize}"
   # end

@@ -1,5 +1,13 @@
 <div class = "container">
 	<div class = "row">
+		<nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/search?category=<%= @product.category.parent.name%>"><%= @product.category.parent.name %></a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/search?sub=<%= @product.category.id %>"><%= @product.category.name %></a></li>
+       </ol>
+    </nav>
+
 		
 			<p class = "title"><%= @product.name %></p>
 	
@@ -13,7 +21,9 @@
 		<div class = "col-md-6">
 			<div class = "card">
 				<div class = "card-body">
-				  <p class = "text-secondary">Product code: 56 240221</p>
+				  <span class = "stars-value" data-star=<%=@product.star_average%>>
+				  	<i class="value"></i>				  	
+				  </span> <span><%=@product.star_average%><span>
 					<p class = "text-success">In stock</p>
 					<div class = "row ">
 					   <h2 class = "price-card"><p class = "button-span"><%= @product.price %><i class = "fas fa-hryvnia"></p></i></h2>
@@ -51,3 +61,21 @@
 		<%= render 'comments/comments', locals: { product: @product }%>
 	</div>
 </div>
+
+
+ <script>  
+
+        $(document).ready(function() {  
+        	     var rat = $('.stars-value').data("star");
+
+        	     if ($('.stars-value').data("star") == 0){
+        	     	 $('.value').addClass("fa fa-star");
+        	     }else{
+          	   var ite = $('.value').addClass("fa fa-star").css("color", "yellow");
+          	   }
+               for (var i = 0; i < rat-1; i++) {
+               	$(".stars-value").append(ite.clone());
+              }
+
+          	});     
+    </script>
