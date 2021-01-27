@@ -1,16 +1,13 @@
-		
-	 <div clas="col-sm-2">
-			<%= image_tag('avatar.png', size: '50x50')%>
-		</div>
-
-		<div class="col-sm-9">
-		  <%= form_with model: [@product, @product.comments.build] do |f|%>
+<div class = "container">
+<div class="col-sm-9">
+      <h2>Update comment</h2>
+		  <%= form_with model: @comment, url: product_comment_path(@product, @comment), method: :patch do |f|%>
 		    <div class="form-group">	
-		    	<i class = "fa fa-star rater-input" aria-hidden = "true" id = "st1"></i>  
-          <i class = "fa fa-star rater-input" aria-hidden = "true" id = "st2"></i>  
-          <i class = "fa fa-star rater-input" aria-hidden = "true" id = "st3"></i>  
-          <i class = "fa fa-star rater-input" aria-hidden = "true" id = "st4"></i>  
-          <i class = "fa fa-star rater-input" aria-hidden = "true" id = "st5"></i>
+		    	<i class = "fa fa-star rater-input-edit" aria-hidden = "true" id = "st1"></i>  
+          <i class = "fa fa-star rater-input-edit" aria-hidden = "true" id = "st2"></i>  
+          <i class = "fa fa-star rater-input-edit" aria-hidden = "true" id = "st3"></i>  
+          <i class = "fa fa-star rater-input-edit" aria-hidden = "true" id = "st4"></i>  
+          <i class = "fa fa-star rater-input-edit" aria-hidden = "true" id = "st5"></i>
           <%= f.hidden_field :rating %>
 		    </div>
 
@@ -20,38 +17,38 @@
 		    <%= button_tag 'Submit', role: 'button', class: 'btn btn-primary submit-comment' %>
 		  <% end %>
 		</div>		
-
+</div>
 
     <script>  
 
         $(document).ready(function() {  
           $("#st1").click(function() {
           	$('#comment_rating').val(1);
-            $(".fa-star.rater-input").css("color", "grey");  
+            $(".fa-star.rater-input-edit").css("color", "grey");  
             $("#st1").css("color", "yellow");  
   
           });  
           $("#st2").click(function() {  
           	$('#comment_rating').val(2);
-            $(".fa-star.rater-input").css("color", "grey");  
+            $(".fa-star.rater-input-edit").css("color", "grey");  
             $("#st1, #st2").css("color", "yellow");  
   
           });  
           $("#st3").click(function() {  
           	$('#comment_rating').val(3);
-            $(".fa-star.rater-input").css("color", "grey")  
+            $(".fa-star.rater-input-edit").css("color", "grey")  
             $("#st1, #st2, #st3").css("color", "yellow");  
   
           });  
           $("#st4").click(function() {  
           	$('#comment_rating').val(4);
-            $(".fa-star.rater-input").css("color", "grey");  
+            $(".fa-star.rater-inpu-editt").css("color", "grey");  
             $("#st1, #st2, #st3, #st4").css("color", "yellow");  
   
           });  
           $("#st5").click(function() {  
           	$('#comment_rating').val(5);
-            $(".fa-star.rater-input").css("color", "grey");  
+            $(".fa-star.rater-input-edit").css("color", "grey");  
             $("#st1, #st2, #st3, #st4, #st5").css("color", "yellow");  
   
           });  

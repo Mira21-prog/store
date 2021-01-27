@@ -16,8 +16,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @comment = Comment.all
-
   end
 
   private

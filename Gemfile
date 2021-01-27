@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 gem 'activeadmin'
-gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
@@ -23,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary', '~> 1.18.1'
+gem 'devise', :git => "https://github.com/heartcombo/devise.git", ref: '8bb358cf80a632d3232c3f548ce7b95fd94b6eb2'
+
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 
 # Use Active Storage variant
@@ -34,8 +35,9 @@ gem 'bootstrap'
 gem 'jquery-ui-rails'
 gem 'paperclip', '~> 6.0.0'
 gem 'will_paginate-bootstrap4'
- gem 'dotenv-rails', groups: [:development, :production]
-
+gem 'omniauth'
+gem 'omniauth-github'
+gem "omniauth-rails_csrf_protection"
 
 group :development do
   gem 'pg'
@@ -51,6 +53,7 @@ group :development do
   gem 'spring'
   gem 'bootstrap-email'
   gem "letter_opener"
+  gem 'dotenv-rails'
 end
 
 group :production do

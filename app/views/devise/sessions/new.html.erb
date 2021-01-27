@@ -21,4 +21,6 @@
     <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
   <% end %>
+   <%= link_to "Sign up with GitHub",  omniauth_authorize_path(resource_name, :github), method: :post %>
+
 </div>

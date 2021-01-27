@@ -1,0 +1,41 @@
+<% if @product.comments.exists?%>
+	<%@product.comments.each do |item_comment|%>
+
+	  <% if item_comment.persisted?%>
+
+      <div class="col-sm-1">
+	      <%= image_tag('avatar.png', size: '50x50')%>
+      </div>
+
+      <div class="col-sm-11 current-comment" data-rating=<%= item_comment.rating%> >
+
+    	  <div class= "row">
+    		  <p><strong><span><%= item_comment.user.first_name%></span> <span><%= item_comment.user.last_name%></span></strong></p>
+    	  </div>
+
+    	  <div class="row stars-rating" data-comment=<%=item_comment.id%> >
+    		  <i class="rating"></i>
+    	  </div>
+
+	      <p><%= item_comment.body%></p>
+	      <%= link_to '', edit_product_comment_path(product_id: @product, id: item_comment.id), method: :get, class: "fa fa-edit pull-right" %>
+	      <%= link_to '', product_comment_path(product_id: @product, id: item_comment.id), method: :delete, class: "fa fa-trash pull-right" %>
+	    </div>
+	  <% else %>
+	  <% end %>
+	<% end %>
+
+<% else %>
+<% end %>
+ <script>  
+
+        $(document).ready(function() {  
+          	$('.comments').children('.current-comment').each(function() {
+          		var rating = $(this).data("rating");
+              var item = $(this).find(".rating").addClass("fa fa-star").css("color", "yellow");
+              for (var i = 0; i < rating-1; i++) {
+              	$(this).find(".stars-rating").append(item.clone());
+              }
+          	});
+          });      
+    </script>
