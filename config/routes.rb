@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get '/about', to: 'static_pages#about', as: 'about'
+  get '/profile', to: 'static_pages#profile', as: 'profile'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'products#index'
+  root 'products#index' 
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions', omniauth_callbacks: 'users/omniauth_callbacks' }
   get '/search', to: 'products#index', as: 'search_products'
   get '/products/:id', to: 'products#show', as: 'product'

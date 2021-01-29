@@ -33,7 +33,7 @@ class Product < ApplicationRecord
   scope :downprice, -> { order(price: :desc) }
   scope :ascendens, -> { order(name: :asc) }
   scope :descendent, -> { order(name: :desc) }
-  scope :by_query, ->(parameter) { where('name ILIKE :search', search: "%#{parameter}%") if parameter.present? }
+  scope :by_query, ->(parameter) { where('name ILIKE :search', search: "%#{parameter}%").or(where('characteristic ILIKE :search', search: "%#{parameter}%")) if parameter.present? }
 
   has_one_attached :attachment
 

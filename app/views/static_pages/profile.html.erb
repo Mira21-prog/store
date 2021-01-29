@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="card">
+    <div class="card-body">
+    	<div class="row">
+    	<div class="col-sm-6 image-center">
+    		<%= image_tag('avatar.png', size: '200x200', class: "")%>
+    	</div>
+    	<div class="col-sm-6">
+       <h4><strong>First name:</strong> <%= current_user.first_name %></h4>
+       <h4><strong>Last name:</strong> <%= current_user.last_name %></h4>
+       <h4><strong>Email:</strong> <%= current_user.email %></h4>
+       <h4><strong>Nickname:</strong> <%= current_user.nickname %></h4>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
