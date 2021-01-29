@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 	def create
 		@product = Product.find(params[:product_id])
     @comment = @product.comments.create(comment_params)
+    flash[:errors] = @comment.errors.full_messages unless @comment.valid?
     redirect_to @product
 	end 
 
@@ -15,8 +16,11 @@ class CommentsController < ApplicationController
 	def update 
 		@product = Product.find(params[:product_id])
 		@comment = Comment.find(params[:id])
-		@comment.update!(comment_params)
-		redirect_to @product
+		if @comment.update(comment_params)
+		  redirect_to @product
+		else 
+			render 'edit'
+		end
 	end 
 
 	def destroy

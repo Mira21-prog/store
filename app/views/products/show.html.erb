@@ -7,8 +7,6 @@
         <li class="breadcrumb-item active" aria-current="page"><a href="/search?sub=<%= @product.category.id %>"><%= @product.category.name %></a></li>
        </ol>
     </nav>
-
-		
 			<p class = "title"><%= @product.name %></p>
 	
 		<div class = "col-md-6">
@@ -41,6 +39,16 @@
 <% if user_signed_in? && check_product(@product) %>
 <div class="container">
 	<h2>Leave comment</h2>
+		<% if flash[:errors] %>
+	    <div class="alert alert-danger" role="alert">
+	    	<h4><%= pluralize(flash[:errors].count, "error") %> prohibited this comment from being saved:</h4>
+	    	<ul>
+    	  <% flash[:errors].each do |err| %>
+    	  	<li><%= err %></li>
+    	  <% end %>
+    	</ul>
+      </div>
+    <% end %>
 	<br>
 	<div class="row">
     <%= render 'comments/new', locals: { product: @product }%>
