@@ -4,7 +4,7 @@
         	  <a class="nav-link font-weight-bold" href="/search?category=<%= category.name%>" id="dropdownMenuLink"><%= category.name %></a>
         	    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         	      <% category.subcategories.each do |sub|%>
-        	  	    <a class="dropdown-item" href="/search?sub=<%= sub.id %>" value = ""><%= sub.name %></a> 
+        	  	    <a class="dropdown-item" href="/search?sub=<%= URI.escape(sub.name , '+') %>" value = ""><%= sub.name %></a> 
         	  	  <% end %>
         	    </div>
           </div>

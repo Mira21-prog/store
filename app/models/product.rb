@@ -25,7 +25,12 @@ class Product < ApplicationRecord
     cat = Category.find_by(name: category)
     where(category: cat.subcategory_ids)
   }
-  scope :sub_category, ->(category) { where('category_id = ?', category) }
+  # scope :sub_category, ->(category) { where('category_id = ?', category) }
+  scope :sub_category, lambda { |sub|
+    cat = Category.find_by(name: sub)
+    where(category: cat.id)
+  }
+
   scope :products_by_price, lambda { |price_from, price_to|
                               where(price: price_from..price_to) if price_from.present? && price_to.present?
                             }
@@ -36,14 +41,13 @@ class Product < ApplicationRecord
   scope :by_query, ->(parameter) { where('name ILIKE :search', search: "%#{parameter}%").or(where('characteristic ILIKE :search', search: "%#{parameter}%")) if parameter.present? }
 
   has_one_attached :attachment
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 
   def star_average
     self.comments.average("rating").to_i
   end 
-
-  # def to_param
-  #   "#{id}-#{name.parameterize}"
-  # end
 end
 
 # == Schema Information
