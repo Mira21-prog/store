@@ -14,12 +14,12 @@
   </head>
   <body>
     <div class = "container">
-       <h1><%= @user.first_name %> <%= @user.first_name %>, welcome to Apple Store</h1>
+       <h1><%= @order.name%>, welcome to Apple Store</h1>
        <p>
          You have successfully maked an order! 
        </p>
        <br>
-       <p>You ordered: </p>
+       <p>Your ordered: </p>
     </div>
     <div class = 'container'>
       <% @order.cart.cart_items.each do |item| %>
@@ -46,6 +46,7 @@
       <div class="row">
         City: <%= @order.city %>
       </div>
+      <div class="row">Email: <%= @order.email %> </p>
     <div>
 
   </body>
