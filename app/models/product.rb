@@ -38,7 +38,11 @@ class Product < ApplicationRecord
   scope :downprice, -> { order(price: :desc) }
   scope :ascendens, -> { order(name: :asc) }
   scope :descendent, -> { order(name: :desc) }
-  scope :by_query, ->(parameter) { where('name ILIKE :search', search: "%#{parameter}%").or(where('characteristic ILIKE :search', search: "%#{parameter}%")) if parameter.present? }
+  scope :by_query, lambda { |parameter|
+                     if parameter.present?
+                       where('name ILIKE :search', search: "%#{parameter}%").or(where('characteristic ILIKE :search', search: "%#{parameter}%"))
+                     end
+                   }
 
   has_one_attached :attachment
   def to_param
@@ -46,8 +50,8 @@ class Product < ApplicationRecord
   end
 
   def star_average
-    self.comments.average("rating").to_i
-  end 
+    comments.average('rating').to_i
+  end
 end
 
 # == Schema Information

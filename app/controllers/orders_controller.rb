@@ -14,9 +14,9 @@ class OrdersController < ApplicationController
       cookies.delete(:cart_id)
       UserMailer.with(order: @order).order_summary.deliver_later
       redirect_to root_path
-      flash[:notice] = "Order successfully created"
+      flash[:notice] = 'Order successfully created'
     else
-    	render 'new'
+      render 'new'
     end
   end
 

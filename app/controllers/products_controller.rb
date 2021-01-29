@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   private
 
   def get_user
-  	current_user if user_signed_in?
+    current_user if user_signed_in?
   end
 
   def get_category

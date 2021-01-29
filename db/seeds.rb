@@ -12,7 +12,8 @@ products_data.each do |item|
   subcategory = category.subcategories.where(parent_id: category.id, name: item[:subcategory].strip).first_or_create!
   product = subcategory.products.create(name: item[:product], price: item[:price],
                                         characteristic: item[:characteristic])
-  product.attachment.attach(io: File.open(Rails.root.join('app', 'assets', 'images', item[:image])), filename: item[:image])
+  product.attachment.attach(io: File.open(Rails.root.join('app', 'assets', 'images', item[:image])),
+                            filename: item[:image])
 end
 if Rails.env.development?
   AdminUser.create!(email: 'admin@example.com', password: 'password',

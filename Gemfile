@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary', '~> 1.18.1'
-gem 'devise', :git => "https://github.com/heartcombo/devise.git", ref: '8bb358cf80a632d3232c3f548ce7b95fd94b6eb2'
+gem 'devise', git: 'https://github.com/heartcombo/devise.git', ref: '8bb358cf80a632d3232c3f548ce7b95fd94b6eb2'
 
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 
@@ -33,11 +33,11 @@ gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 gem 'jquery-ui-rails'
-gem 'paperclip', '~> 6.0.0'
-gem 'will_paginate-bootstrap4'
 gem 'omniauth'
 gem 'omniauth-github'
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
+gem 'paperclip', '~> 6.0.0'
+gem 'will_paginate-bootstrap4'
 
 group :development do
   gem 'pg'
@@ -49,17 +49,17 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'annotate'
+  gem 'bootstrap-email'
+  gem 'dotenv-rails'
+  gem 'letter_opener'
   gem 'pry'
   gem 'spring'
-  gem 'bootstrap-email'
-  gem "letter_opener"
-  gem 'dotenv-rails'
 end
 
 group :production do
+  gem 'mini_magick'
   gem 'pg'
   gem 'rails_12factor', '0.0.2'
-  gem "mini_magick"
 end
 
 group :test do

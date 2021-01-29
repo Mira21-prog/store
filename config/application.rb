@@ -4,7 +4,6 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 
-
 module Store
   class Application < Rails::Application
     Bundler.require(*Rails.groups)
