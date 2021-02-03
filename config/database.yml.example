@@ -18,3 +18,5 @@ production:
   database: production_store
   pool: 5
   timeout: 5000
+  user: <%= ENV.fetch("PG_USER") %>
+  password: <%= ENV.fetch("PG_PASSWORD") %>
