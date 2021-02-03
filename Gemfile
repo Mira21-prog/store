@@ -21,6 +21,7 @@ gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 gem 'paperclip', '~> 6.0.0'
 gem 'will_paginate-bootstrap4'
+gem "msgpack", "1.4.2"
 
 group :development do
   gem 'pg'

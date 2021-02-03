@@ -1,6 +1,6 @@
 lock "~> 3.15.0"
 
-set :repo_url, "git@github.com:Mira21-prog/store.git"
+set :repo_url, "https://github.com/Mira21-prog/store.git"
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :user, "deployer"
