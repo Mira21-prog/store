@@ -40,4 +40,7 @@ yarn-debug.log*
 .yarn-integrity
 .env
 .ruby-gemset
-app_env_vars.*
+app_env_vars.*/config/database.yml
+/config/database.production.yml
+/config/secrets.yml
+/config/secrets.production.yml

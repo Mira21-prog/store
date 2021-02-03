@@ -1,0 +1,30 @@
+d4ac7b9950ddc53835f661c7761ad3e904c48c65		branch 'master' of https://github.com/seuros/capistrano-puma
+2563c5ea11cc901fc41aadca9ad99d73753fb23d		branch 'v2' of https://github.com/seuros/capistrano-puma
+d2967646cfae7b1dae55d811643b1870dd1bb7ef		branch 'v3.1' of https://github.com/seuros/capistrano-puma
+b148515f78476b68ab8e09bcc494e82ceb53eba0		branch 'v4.x' of https://github.com/seuros/capistrano-puma
+e7e070c34a0346f07f3a48e1fa52c3900391ec41	not-for-merge	tag 'v0.2.0' of https://github.com/seuros/capistrano-puma
+80b29ff46529e1d01e5e96e3b3eb98f29f00e9bb	not-for-merge	tag 'v0.6.1' of https://github.com/seuros/capistrano-puma
+8df1c14b2821c6f93a3996e9e7a44cc7a4bc3671	not-for-merge	tag 'v0.7.0' of https://github.com/seuros/capistrano-puma
+54f93b50fa6408d1f15ebd950271005802b62f98	not-for-merge	tag 'v0.8.0' of https://github.com/seuros/capistrano-puma
+c8406aecbecbbe3930d53a8276f8f404e95a4345	not-for-merge	tag 'v0.8.1' of https://github.com/seuros/capistrano-puma
+479d670e558b720085a9c378772719222fb1e3d3	not-for-merge	tag 'v0.8.2' of https://github.com/seuros/capistrano-puma
+8cb45170eb0fa2887116ef06079ec5f63e05a4ae	not-for-merge	tag 'v0.8.3' of https://github.com/seuros/capistrano-puma
+985ac949e0333c62c9a1971d407cd798233937d9	not-for-merge	tag 'v0.8.4' of https://github.com/seuros/capistrano-puma
+58c00189b5c966e548e94aadc505fc785f82e6b5	not-for-merge	tag 'v0.8.5' of https://github.com/seuros/capistrano-puma
+2bdbf2b9e430f79e6cb8b15a1d3fc164ff61cf1e	not-for-merge	tag 'v0.9.0' of https://github.com/seuros/capistrano-puma
+1b9a42d581bc6cd76c50cfb81c902bf2765c2e26	not-for-merge	tag 'v1.0.0' of https://github.com/seuros/capistrano-puma
+152522ad8a4b7419feeb57207b020640e4ec0ff9	not-for-merge	tag 'v1.1.0' of https://github.com/seuros/capistrano-puma
+4e8b457e34d6173ddaa6a70ab3ed95e2e659b413	not-for-merge	tag 'v1.2.0' of https://github.com/seuros/capistrano-puma
+f79227437929ccf7da49a9252125f2c97349095e	not-for-merge	tag 'v1.2.1' of https://github.com/seuros/capistrano-puma
+48e87d5fb5ecfcbcc1bf2a5808d53f46f894687a	not-for-merge	tag 'v2.0.0' of https://github.com/seuros/capistrano-puma
+c2da9f55494fe0111e0a88fc0d67130bb76e3ee2	not-for-merge	tag 'v3.0.0' of https://github.com/seuros/capistrano-puma
+3c63afc8d5204c97dcbf2b67a8694b82e949bbdb	not-for-merge	tag 'v3.0.1' of https://github.com/seuros/capistrano-puma
+21bdfc6abea9cee4f59f0cdf775b89351e57f98a	not-for-merge	tag 'v3.0.2' of https://github.com/seuros/capistrano-puma
+3e2266215ad752f0f60a78c72c1080af0194db4f	not-for-merge	tag 'v3.0.3' of https://github.com/seuros/capistrano-puma
+148800b6ca3c7cc2f77d91c1f46653e2b1df20d8	not-for-merge	tag 'v3.1.0' of https://github.com/seuros/capistrano-puma
+ba5f577c3ccf2743ad74099ab120462b2561e3c0	not-for-merge	tag 'v3.1.1' of https://github.com/seuros/capistrano-puma
+b84dfa7d958ad4abcea461401143135e4c3f73ed	not-for-merge	tag 'v4.0.0' of https://github.com/seuros/capistrano-puma
+34fd1970c72406c41acd42a815069fa255dc76e5	not-for-merge	tag 'v5.0.0' of https://github.com/seuros/capistrano-puma
+8ef1e1aa11dc5deb6f6ad94411d0428b256e9e37	not-for-merge	tag 'v5.0.0.beta1' of https://github.com/seuros/capistrano-puma
+469f0c2db040a78908a9b24169b3c7f2ab8e3ec1	not-for-merge	tag 'v5.0.1' of https://github.com/seuros/capistrano-puma
+7305f5448d54c4e996d5b2303aa2d9967d34ac14	not-for-merge	tag 'v5.0.2' of https://github.com/seuros/capistrano-puma
