@@ -1,4 +1,5 @@
 # Copyright Cloudinary
+
 if RUBY_VERSION > "2"
   require "ostruct"
 else
@@ -82,7 +83,7 @@ module Cloudinary
     end
     set_config(
       "cloud_name"          => uri.host,
-      "api_key"             => uri.user,
+      "api_key"             => ,
       "api_secret"          => uri.password,
       "private_cdn"         => !uri.path.blank?,
       "secure_distribution" => uri.path[1..-1]
@@ -165,4 +166,10 @@ end
   require "cloudinary/cloudinary_controller" if defined?(::ActionController::Base)
   require "cloudinary/railtie" if defined?(Rails) && defined?(Rails::Railtie)
   require "cloudinary/engine" if defined?(Rails) && defined?(Rails::Engine)
-
+  
+  Cloudinary.configure do |c|
+    c.cloud_name = Rails.application.secrets.CLOUD_NAME
+    c.api_key = Rails.application.secrets.API_KEY
+    c.api_secret = Rails.application.secrets.API_SECRET
+    c.secure = Rails.application.secrets.STATIC_SECURE
+  end
