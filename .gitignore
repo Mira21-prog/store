@@ -44,3 +44,4 @@ app_env_vars.*/config/database.yml
 /config/database.production.yml
 /config/secrets.yml
 /config/secrets.production.yml
+cloudinary.rb

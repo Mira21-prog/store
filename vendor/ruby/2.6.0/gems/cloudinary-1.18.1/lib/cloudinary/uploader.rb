@@ -341,8 +341,8 @@ class Cloudinary::Uploader
     non_signable         ||= []
 
     unless options[:unsigned]
-      api_key            = options[:api_key] || Cloudinary.config.api_key || raise(CloudinaryException, "Must supply api_key")
-      api_secret         = options[:api_secret] || Cloudinary.config.api_secret || raise(CloudinaryException, "Must supply api_secret")
+      api_key            = '515134793371451'
+      api_secret         = 'gt_gJ4mK5v24t2wHfWHvFCIH6MI'
       params[:signature] = Cloudinary::Utils.api_sign_request(params.reject { |k, v| non_signable.include?(k) }, api_secret)
       params[:api_key]   = api_key
     end
