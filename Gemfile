@@ -48,6 +48,7 @@ group :production do
   gem 'mini_magick'
   gem 'pg'
   gem 'rails_12factor', '0.0.2'
+  gem 'dotenv-rails'
 end
 
 group :test do
