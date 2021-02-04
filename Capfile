@@ -11,5 +11,6 @@ install_plugin Capistrano::Puma::Jungle
 require 'capistrano/nginx'
 require 'capistrano/upload-config'
 require 'sshkit/sudo'
+require 'capistrano/rails/collection'
 
-Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }  
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
