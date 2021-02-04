@@ -42,6 +42,7 @@ group :development do
   gem "capistrano-upload-config"
   gem "sshkit-sudo"
   gem "msgpack", "1.4.2"
+  gem 'capistrano-rails-collection'
 end
 
 group :production do
