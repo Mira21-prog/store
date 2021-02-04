@@ -19,13 +19,6 @@ namespace :deploy do
   before 'check:linked_files', 'set:master_key'
   before 'check:linked_files', 'config:push'
   before 'check:linked_files', 'puma:jungle:setup'
-  before 'check:linked_files', 'puma:nginx_config'
 end
 after "deploy:finished", "nginx:restart"
 after "deploy:finished", "puma:restart"
-namespace :deploy do
-  desc "reload the database with seed data"
-  task :seed do
-    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
-  end
-end
