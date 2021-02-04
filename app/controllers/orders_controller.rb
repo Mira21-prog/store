@@ -4,7 +4,10 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @latest_order = current_user.orders.last
+    if current_user.present?
+      @latest_order = current_user.orders.last
+    else
+    end
   end
 
   def create
