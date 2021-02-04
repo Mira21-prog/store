@@ -1,5 +1,5 @@
 # Copyright Cloudinary
-
+require("dotenv").config();
 if RUBY_VERSION > "2"
   require "ostruct"
 else
