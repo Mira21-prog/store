@@ -1,24 +1,27 @@
-# README
+Instruction HW11/HW12/HW13/HW14
+-
+Clone this repository
+```
+https://github.com/Mira21-prog/store.git
+```
+Swich on
+```
+cd store/store
+```
+Run server
+```
+rails s
+```
+Go to
+```
+http://localhost:3000/
+```
+Heroku server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+https://apple-store-app.herokuapp.com/
+```
+DO 
+```
+https://ghapple-store.ddnsking.com/
+```
