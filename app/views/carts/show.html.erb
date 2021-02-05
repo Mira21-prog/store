@@ -24,13 +24,13 @@
 	          <p> <%= item.product.price %> <i class = "fas fa-hryvnia"></i> </p>
 	          <div class="form-inline">
 	          	<div class="form-group">
-	             <%= link_to "+", 'javascript:void(0)', data: { url: product_cart_item_path(item.product.id, item, query: "increment") }, class: "btn btn-info change-quantity" %>
+	             <%= link_to "+", 'javascript:void(0)', data: { url: product_cart_item_path(item.product.id, item, query: "increment") }, class: "btn btn-info change-quantity plus" %>
 	            </div>
 	            <div class = "form-group">
 	              <input id="quantity_cart_input"  class="form-control" value="<%= item.quantity %>" readonly></input>
 	            </div>
 	            <div class = "form-group">
-	              <%= link_to "-", 'javascript:void(0)', data: { url:  product_cart_item_path(item.product.id, item, query: "decrement") }, class: 'btn btn-info change-quantity' %>
+	              <%= link_to "-", 'javascript:void(0)', data: { url:  product_cart_item_path(item.product.id, item, query: "decrement") }, class: 'btn btn-info change-quantity minus' %>
 	            </div>
 	             <%= link_to "Delete", 'javascript:void(0)', data: { url: product_cart_item_path(item.product.id, item) }, class: 'btn btn-warning delete-cart-item' %>
 	          </div>
@@ -45,8 +45,10 @@
 <div class="modal-footer">
         <div class="count-price">
         	<div class="element-footer">
-        	  <span class="total-price">Total price: <%= cart.total_price %> <i class = "fas fa-hryvnia"></i></span>
-        	 
+        	  <span>Total price: </span>
+            <span class="total-price"><%= cart.total_price %> </span>
+            <span><i class = "fas fa-hryvnia"></i></span>
+
         	  <%= link_to "To order", new_order_path, class: "btn btn-success"%>
           </div>
         </div>

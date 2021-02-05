@@ -1,7 +1,6 @@
 class CartItemsController < ApplicationController
   before_action :get_cart, only: %i[create update destroy]
   skip_before_action :verify_authenticity_token, only: %i[update destroy]
-  before_action :total_price, only: [:update]
   before_action :find_cart_items, only: %i[update destroy]
 
   def index
@@ -25,6 +24,7 @@ class CartItemsController < ApplicationController
   def update
     quantity = params[:query]
     check_increment(quantity)
+    total_price
     respond_to do |format|
       format.json do
         render json: { quantity_count: @quantity_count, price: @price }
@@ -58,7 +58,7 @@ class CartItemsController < ApplicationController
       @item.update(quantity: @item.quantity + 1)
       @quantity_count = @item.quantity
     else
-      count = @item.quantity - 1
+      count = @item.quantity <= 1 ? 1 : @item.quantity - 1
       @item.update(quantity: count) unless count.negative?
       @quantity_count = @item.quantity
     end
