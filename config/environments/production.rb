@@ -117,7 +117,7 @@ Rails.application.configure do
     port: 587,
     user_name: ENV['MAILER_EMAIL'],
     password: ENV['MAILER_PASSWORD'],
-    authentication: 'plain'
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 
