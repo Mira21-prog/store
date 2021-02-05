@@ -13,6 +13,8 @@ set :linked_dirs,  fetch(:linked_dirs, []).push("log", "tmp/pids", "tmp/cache", 
 set :config_example_suffix, ".example"
 set :config_files, ["config/database.yml", "config/secrets.yml"]
 set :nginx_use_ssl, false
+set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 
 namespace :deploy do
   before 'check:linked_files', 'set:master_key'
