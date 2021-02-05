@@ -4,11 +4,11 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="/search?category=<%= @product.category.parent.name%>"><%= @product.category.parent.name %></a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="/search?sub=<%= @product.category.id %>"><%= @product.category.name %></a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/search?sub=<%= URI.escape(@product.category.name, '+') %>"><%= @product.category.name %></a></li>
        </ol>
     </nav>
 			<p class = "title"><%= @product.name %></p>
-	
+
 		<div class = "col-md-6">
 			<div class = "card">
 				<% if @product.attachment.attached? %>
@@ -20,7 +20,7 @@
 			<div class = "card">
 				<div class = "card-body">
 				  <span class = "stars-value" data-star=<%=@product.star_average%>>
-				  	<i class="value"></i>				  	
+				  	<i class="value"></i>
 				  </span> <span><%=@product.star_average%><span>
 					<p class = "text-success">In stock</p>
 					<div class = "row ">
@@ -66,9 +66,9 @@
 </div>
 
 
- <script>  
+ <script>
 
-        $(document).ready(function() {  
+        $(document).ready(function() {
         	     var rat = $('.stars-value').data("star");
 
         	     if ($('.stars-value').data("star") == 0){
@@ -80,5 +80,5 @@
                	$(".stars-value").append(ite.clone());
               }
 
-          	});     
+          	});
     </script>
