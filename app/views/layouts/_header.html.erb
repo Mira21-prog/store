@@ -2,7 +2,7 @@
     <div class = "row">
     	<div class = "col-md-2">
     		<div class="navbar-brand text-uppercase font-weight-bold">
-    		<a href = "/">Apple Store</a></div>    
+    		<a href = "/">Apple Store</a></div>
 		  </div>
 
 	  	<div class = "col-md-8 input-catalog">
@@ -17,6 +17,7 @@
 		        	<% if user_signed_in? %>
 		        	  <li><a href="/about">About</a></li>
 		        	  <li><a href="/profile">Your profile</a></li>
+                <li><a href="/orders">Your orders</a></li>
 		        	  <hr>
                 <li><%= link_to("Log out", destroy_user_session_path, method: :delete)%></li>
 		        	<% else %>
@@ -33,7 +34,7 @@
 
 	  <div class = "row">
 	    <div class = "col-md-12 catalog">
-    	  <%= render "layouts/nav" %>  
+    	  <%= render "layouts/nav" %>
       </div>
     </div>
 	</div>
@@ -55,7 +56,7 @@
 	     <%= render template: "devise/sessions/new" %>
 	  </div>
 	</div>
-</div> 
+</div>
 
 <div class="modal fade" id ="cart-modal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
@@ -79,7 +80,7 @@ $(document).ready(function(){
 		  		});
 		  	response(suggestions);
         });
-    }     
+    }
   });
 });
 

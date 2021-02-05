@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/about', to: 'static_pages#about', as: 'about'
+  get '/orders', to: 'static_pages#orders', as: 'orders'
   get '/profile', to: 'static_pages#profile', as: 'profile'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

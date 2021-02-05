@@ -118,7 +118,7 @@ Rails.application.configure do
     user_name: ENV['MAILER_EMAIL'],
     password: ENV['MAILER_PASSWORD'],
     authentication: 'plain'
-    :enable_starttls_auto => true
+    enable_starttls_auto: true
   }
 
   # Inserts middleware to perform automatic connection switching.
